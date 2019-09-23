@@ -84,7 +84,7 @@ public class StepsCreditoHipotecario {
 	
 	@Then("obtener resultado {string}")
 	public void datosSimulacionCredito(String obtenerResultadoSimulacionCredito) throws AutomataException {
-		log.info("Visualizar el Detalle del Credito Hipotecario");
+		log.info("Visualiza el Detalle del Credito Hipotecario");
 		Element btnSimularCredito = new ElementBuilder().byXpath(MappingElements.mapping.getProperty(obtenerResultadoSimulacionCredito, obtenerResultadoSimulacionCredito)).build();
 		utom.execute(Action.GET_TEXT, btnSimularCredito);
 	}

@@ -1,0 +1,31 @@
+Feature: Solicitar cotizacion de Credito Hipotecario Casa en Web de Banco de chile
+	Scenario: CreditoHipotecario de Casa tasa mixta
+		Given ingresar URL "url"
+		When click opcion "simuladores"
+		And click opcion "creditoHipo"
+		And ingresar dato "txtrut" en campo "rutCreHipo"
+		And click opcion "simularSinClave"
+		And ingresar dato "txtvalorUF" en campo "valorUF"
+		And click opcion "seleccionarTipoCredito"
+		And click opcion "creditoTazaMixta"
+		And click opcion "seleccionarPlazoTaza"
+		And click opcion "plazoTaza3"
+		And click opcion "seleccionarPlazoCredito"
+		And click opcion "plazoCredito25"
+		And click opcion "botonSimularCredito"
+		Then obtener resultado "obtenerResultadoSimulacionCredito"
+		
+	Scenario: CreditoHipotecario de tasa fija
+		Given ingresar URL "url"
+		When click opcion "simuladores"
+		And click opcion "creditoHipo"
+		And ingresar dato "txtrut" en campo "rutCreHipo"
+		And click opcion "simularSinClave"
+		And ingresar dato "txtvalorUF" en campo "valorUF"
+		And click opcion "seleccionarTipoCredito"
+		And click opcion "creditoTasaFija"
+		And click opcion "seleccionarPlazoCredito"
+		And click opcion "plazoCredito30"
+		And click opcion "botonSimularCredito"
+		Then obtener resultado "obtenerResultadoSimulacionCredito"
+		
